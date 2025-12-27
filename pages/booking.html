@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Foto - Bloom Studio</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../assets/icons/camera-icon.png">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <i class="bi bi-flower1 me-2"></i>
+                <span>Bloom Studio</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="packages.html" class="nav-link"><i class="fas fa-box-open"></i> Paket</a></li>
+                <li><a href="testimonials.html" class="nav-link"><i class="fas fa-comment"></i> Testimoni</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        <i class="fas fa-calendar-check"></i> Pemesanan <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="booking.html" class="active"><i class="fas fa-book"></i> Booking</a></li>
+                        <li><a href="status.html"><i class="fas fa-clipboard-list"></i> Status</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-container">
+        <!-- Booking Hero -->
+        <section class="page-section">
+            <div class="page-section-content">
+                <div class="booking-hero">
+                    <h1>Booking Sesi Foto</h1>
+                    <p>Isi form di bawah ini untuk memesan sesi fotografi di Bloom Studio. Kami akan menghubungi Anda untuk konfirmasi.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Steps -->
+        <section class="page-section booking-steps">
+            <div class="page-section-content">
+                <div class="section-header">
+                    <h2 class="section-title">Proses Booking</h2>
+                    <p class="section-subtitle">Langkah-langkah mudah untuk booking sesi foto</p>
+                </div>
+                
+                <div class="steps-grid">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <h3>Isi Form Booking</h3>
+                        <p>Lengkapi data diri dan pilih paket yang sesuai dengan kebutuhan Anda</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <h3>Konfirmasi Booking</h3>
+                        <p>Tim kami akan menghubungi Anda untuk konfirmasi ketersediaan jadwal</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <h3>Pembayaran DP</h3>
+                        <p>Lakukan pembayaran DP 50% untuk mengamankan jadwal Anda</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <h3>Sesi Foto</h3>
+                        <p>Datang ke studio sesuai jadwal dan nikmati sesi foto bersama tim kami</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Container -->
+        <section class="page-section">
+            <div class="page-section-content">
+                <!-- Booking Info - Full Width -->
+                <div class="booking-info-section">
+                    <h2>Informasi Booking</h2>
+                    <p>Sebelum mengisi form booking, perhatikan informasi berikut:</p>
+                    
+                    <ul>
+                        <li>
+                            <strong><i class="fas fa-calendar-check"></i> Konfirmasi Booking</strong>
+                            <span>Anda akan menerima email konfirmasi dalam 24 jam</span>
+                        </li>
+                        <li>
+                            <strong><i class="fas fa-clock"></i> Jam Operasional</strong>
+                            <span>Senin - Sabtu, 09:00 - 17:00 (Minggu Libur)</span>
+                        </li>
+                        <li>
+                            <strong><i class="fas fa-money-bill-wave"></i> Pembayaran</strong>
+                            <span>DP 50% saat booking, 50% sebelum sesi foto</span>
+                        </li>
+                        <li>
+                            <strong><i class="fas fa-camera"></i> Durasi Sesi</strong>
+                            <span>Sesuai paket yang dipilih</span>
+                        </li>
+                        <li>
+                            <strong><i class="fas fa-user-friends"></i> Jumlah Orang</strong>
+                            <span>Sesuaikan dengan kapasitas studio</span>
+                        </li>
+                        <li>
+                            <strong><i class="fas fa-undo"></i> Reschedule</strong>
+                            <span>Dapat diubah maksimal 3x24 jam sebelum jadwal</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Booking Form - Full Width -->
+                <div class="booking-form-section">
+                    <h2>Form Booking</h2>
+                    <p class="section-subtitle">Lengkapi data diri Anda untuk proses booking</p>
+                    
+                    <form id="bookingForm">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap *</label>
+                            <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" placeholder="nama@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Nomor Telepon *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="0812-3456-7890" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="package">Pilih Paket *</label>
+                                <select id="package" name="package" required>
+                                    <option value="">Pilih Paket</option>
+                                    <option value="499000">Basic - Rp 499.000</option>
+                                    <option value="899000">Standar - Rp 899.000 (Popular)</option>
+                                    <option value="1499000">Premium - Rp 1.499.000</option>
+                                    <option value="3999000">Wedding - Rp 3.999.000</option>
+                                    <option value="1099000">Newborn - Rp 1.099.000</option>
+                                    <option value="1499000">Birthday - Rp 1.499.000</option>
+                                    <option value="1299000">Family - Rp 1.299.000</option>
+                                    <option value="699000">Wisuda - Rp 699.000</option>
+                                    <option value="custom">Lainnya (Custom - Hubungi untuk Quote)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="people">Jumlah Orang</label>
+                                <select id="people" name="people">
+                                    <option value="1 Orang">1 Orang</option>
+                                    <option value="2 Orang">2 Orang</option>
+                                    <option value="3-5 Orang">3-5 Orang</option>
+                                    <option value="6-10 Orang">6-10 Orang</option>
+                                    <option value="10+ Orang">10+ Orang</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Tanggal Booking *</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Waktu *</label>
+                                <select id="time" name="time" required>
+                                    <option value="">Pilih Waktu</option>
+                                    <option value="09:00 - 10:00">09:00 - 10:00</option>
+                                    <option value="10:00 - 11:00">10:00 - 11:00</option>
+                                    <option value="11:00 - 12:00">11:00 - 12:00</option>
+                                    <option value="13:00 - 14:00">13:00 - 14:00</option>
+                                    <option value="14:00 - 15:00">14:00 - 15:00</option>
+                                    <option value="15:00 - 16:00">15:00 - 16:00</option>
+                                    <option value="16:00 - 17:00">16:00 - 17:00</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="concept">Konsep Foto (Opsional)</label>
+                            <select id="concept" name="concept">
+                                <option value="">Pilih Konsep</option>
+                                <option value="portrait">Portrait</option>
+                                <option value="casual">Casual</option>
+                                <option value="formal">Formal</option>
+                                <option value="vintage">Vintage</option>
+                                <option value="minimalist">Minimalist</option>
+                                <option value="other">Lainnya (sebutkan di pesan)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="background">Pilih Background *</label>
+                            <select id="background" name="background" required>
+                                <option value="">Pilih Background</option>
+                                <optgroup label="Family">
+                                    <option value="BF1">BF1 - Background Family 1</option>
+                                    <option value="BF2">BF2 - Background Family 2</option>
+                                    <option value="BF3">BF3 - Background Family 3</option>
+                                    <option value="BF4">BF4 - Background Family 4</option>
+                                </optgroup>
+                                <optgroup label="Newborn">
+                                    <option value="NB1">NB1 - Background Newborn 1</option>
+                                    <option value="NB2">NB2 - Background Newborn 2</option>
+                                    <option value="NB3">NB3 - Background Newborn 3</option>
+                                    <option value="NB4">NB4 - Background Newborn 4</option>
+                                </optgroup>
+                                <optgroup label="Birthday">
+                                    <option value="BD1">BD1 - Background Birthday 1</option>
+                                    <option value="BD2">BD2 - Background Birthday 2</option>
+                                    <option value="BD3">BD3 - Background Birthday 3</option>
+                                    <option value="BD4">BD4 - Background Birthday 4</option>
+                                </optgroup>
+                                <optgroup label="Wisuda">
+                                    <option value="WS1">WS1 - Background Wisuda 1</option>
+                                    <option value="WS2">WS2 - Background Wisuda 2</option>
+                                    <option value="WS3">WS3 - Background Wisuda 3</option>
+                                    <option value="WS4">WS4 - Background Wisuda 4</option>
+                                </optgroup>
+                                <optgroup label="Wedding">
+                                    <option value="WG1">WG1 - Background Wedding 1</option>
+                                    <option value="WG2">WG2 - Background Wedding 2</option>
+                                    <option value="WG3">WG3 - Background Wedding 3</option>
+                                    <option value="WG4">WG4 - Background Wedding 4</option>
+                                </optgroup>
+                                <optgroup label="Lainnya">
+                                    <option value="LN1">LN1 - Background Lain 1</option>
+                                    <option value="LN2">LN2 - Background Lain 2</option>
+                                    <option value="LN3">LN3 - Background Lain 3</option>
+                                    <option value="LN4">LN4 - Background Lain 4</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Pesan Tambahan (Opsional)</label>
+                            <textarea id="message" name="message" placeholder="Kebutuhan khusus, referensi foto, atau pertanyaan..."></textarea>
+                        </div>
+
+                        <!-- Price Calculator -->
+                        <div class="price-calculator-section">
+                            <h3><i class="fas fa-calculator"></i> Kalkulasi Harga</h3>
+                            
+                            <div class="price-display">
+                                <div class="price-item">
+                                    <label>Harga Paket</label>
+                                    <p id="basePrice" class="price-value">Rp 0</p>
+                                </div>
+                            </div>
+                            
+                            <div class="payment-type-section">
+                                <label>Tipe Pembayaran *</label>
+                                <div class="payment-type-options">
+                                    <label class="radio-option">
+                                        <input type="radio" name="paymentType" value="dp" id="paymentDP" checked>
+                                        <span class="radio-label">
+                                            <strong>DP 50%</strong>
+                                            <small>Bayar setengah harga sekarang</small>
+                                        </span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="paymentType" value="full" id="paymentFull">
+                                        <span class="radio-label">
+                                            <strong>Lunas 100%</strong>
+                                            <small>Bayar penuh sekarang</small>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="price-summary">
+                                <div class="summary-row">
+                                    <span>Total Harga</span>
+                                    <span id="totalPrice" class="price-value">Rp 0</span>
+                                </div>
+                                <div class="summary-row highlight">
+                                    <span id="paymentLabel">Jumlah Pembayaran (DP 50%)</span>
+                                    <span id="paymentAmount" class="price-value highlight">Rp 0</span>
+                                </div>
+                                <p class="price-note"><i class="fas fa-info-circle"></i> Sisa pembayaran dapat dilakukan sebelum atau pada hari sesi foto</p>
+                            </div>
+                        </div>
+
+                        <!-- Payment Methods in Form -->
+                        <div class="form-payment-section">
+                            <h3>Pilih Metode Pembayaran</h3>
+                            <div class="payment-methods-grid">
+                                <div class="payment-method-card" data-method="transfer">
+                                    <div class="payment-method-header">
+                                        <i class="fas fa-university"></i>
+                                        <span>Transfer Bank</span>
+                                    </div>
+                                    <div class="payment-method-details" style="display: none;">
+                                        <p><strong>Pilih Bank:</strong></p>
+                                        <div style="margin-top: 10px; text-align: left;">
+                                            <p style="margin: 8px 0;"><strong>🏦 Bank BCA</strong><br>1234567890 (Bloom Studio)</p>
+                                            <p style="margin: 8px 0;"><strong>🏦 Bank Mandiri</strong><br>0987654321 (Bloom Studio)</p>
+                                            <p style="margin: 8px 0;"><strong>🏦 Bank BRI</strong><br>1122334455 (Bloom Studio)</p>
+                                            <p style="margin: 8px 0;"><strong>🏦 Bank BNI</strong><br>5566778899 (Bloom Studio)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="payment-method-card" data-method="ewallet">
+                                    <div class="payment-method-header">
+                                        <i class="fab fa-gopay"></i>
+                                        <span>E-Wallet</span>
+                                    </div>
+                                    <div class="payment-method-details" style="display: none;">
+                                        <p><strong>Pilih E-Wallet:</strong></p>
+                                        <div style="margin-top: 10px; text-align: left;">
+                                            <p style="margin: 8px 0;"><strong>💳 Gopay</strong><br>0812-1234-5678</p>
+                                            <p style="margin: 8px 0;"><strong>💳 OVO</strong><br>0812-1234-5678</p>
+                                            <p style="margin: 8px 0;"><strong>💳 Dana</strong><br>0812-1234-5678</p>
+                                            <p style="margin: 8px 0;"><strong>🛍️ Shopee Pay</strong><br>BloomStudio2024</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="payment-method-card" data-method="qris">
+                                    <div class="payment-method-header">
+                                        <i class="fas fa-qrcode"></i>
+                                        <span>QRIS</span>
+                                    </div>
+                                    <div class="payment-method-details" style="display: none;">
+                                        <p>Scan QRIS kami untuk transfer instan:</p>
+                                        <img src="data:image/png;base64,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" alt="QRIS" style="max-width: 150px; margin-top: 10px; border-radius: 8px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Proof Upload -->
+                        <div class="form-group">
+                            <label for="paymentProof">Bukti Pembayaran *</label>
+                            <input type="file" id="paymentProof" name="paymentProof" accept="image/*,.pdf" required>
+                            <small id="paymentProofHelp" style="color: var(--light-brown); margin-top: 6px; display: block;">Format: JPG, PNG, atau PDF (Max. 5MB). Wajib upload bukti pembayaran.</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terms" required>
+                                <span>Saya setuju dengan <a href="#" class="terms-link" data-terms="terms">Syarat & Ketentuan</a> dan <a href="#" class="terms-link" data-terms="privacy">Kebijakan Privasi</a> Bloom Studio</span>
+                            </label>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">
+                                <i class="fas fa-paper-plane"></i> Kirim Booking
+                            </button>
+                            <button type="reset" class="btn-secondary">
+                                <i class="fas fa-redo"></i> Reset Form
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Success Modal -->
+                <div id="successModal" class="modal">
+                    <div class="modal-content booking-success">
+                        <div class="modal-header">
+                            <button class="modal-close" data-close="success">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="success-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h2>Booking Anda Berhasil!</h2>
+                            <p class="success-subtitle">Terima kasih telah memesan sesi foto bersama Bloom Studio</p>
+                            
+                            <div class="success-details">
+                                <div class="detail-item">
+                                    <label>Nama Pelanggan</label>
+                                    <p id="successName">-</p>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Email</label>
+                                    <p id="successEmail">-</p>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Paket Booking</label>
+                                    <p id="successPackage">-</p>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Tanggal & Waktu</label>
+                                    <p id="successDate">-</p>
+                                </div>
+                            </div>
+
+                            <div class="booking-code-box">
+                                <p class="booking-code-label">Kode Booking Anda (Simpan untuk Referensi)</p>
+                                <p id="successCode" class="booking-code">-</p>
+                            </div>
+                            
+                            <div class="success-footer">
+                                <p><strong>✓ Booking berhasil dicatat dalam sistem kami</strong></p>
+                                <p>Kirim detail booking ke WhatsApp untuk konfirmasi lebih cepat dan pembayaran.</p>
+                                <p style="margin-top: 1rem;"><strong>Admin Bloom Studio</strong><br><i class="fab fa-whatsapp"></i> +62 887-436-251512</p>
+                            </div>
+                            
+                            <div class="success-actions">
+                                <a href="#" id="whatsappSendBtn" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
+                                    <i class="fab fa-whatsapp"></i> Kirim ke WhatsApp
+                                </a>
+                                <a href="booking.html" class="btn-secondary">Booking Lagi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact/Help Section - Full Width -->
+                <div class="contact-section">
+                    <h2><i class="fas fa-headset"></i> Butuh Bantuan?</h2>
+                    <p>Hubungi kami untuk konsultasi atau pertanyaan:</p>
+                    <div class="contact-actions">
+                        <a href="https://wa.me/62887436251512" class="btn-primary whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="tel:0214567890" class="btn-secondary">
+                            <i class="fas fa-phone"></i> Telepon
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="page-section faq-section">
+            <div class="page-section-content">
+                <div class="contact-section">
+                    <h2><i class="fas fa-question-circle"></i> Pertanyaan Umum</h2>
+                    <p>Informasi penting seputar booking dan status</p>
+                
+                    <div class="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span><i class="fas fa-question-circle"></i> Bagaimana cara mendapatkan ID Booking?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>ID Booking dikirim ke email Anda dalam waktu 24 jam setelah mengisi form booking. Jika tidak menerima, cek folder spam atau hubungi kami.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span><i class="fas fa-clock"></i> Berapa lama proses konfirmasi booking?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Tim kami akan menghubungi Anda dalam 1x24 jam kerja untuk konfirmasi ketersediaan jadwal dan detail pembayaran.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span><i class="fas fa-calendar-alt"></i> Bagaimana cara reschedule booking?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Hubungi kami minimal 3x24 jam sebelum jadwal booking untuk mengubah tanggal. Reschedule maksimal 2 kali.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span><i class="fas fa-money-bill-wave"></i> Bagaimana cara pembayaran?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Setelah konfirmasi, Anda akan menerima invoice untuk pembayaran DP 50%. Sisa pembayaran dilunasi sebelum sesi foto dimulai.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span><i class="fas fa-images"></i> Kapan hasil foto siap?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Proses editing membutuhkan waktu 7-14 hari kerja tergantung paket. Anda akan dihubungi saat hasil foto sudah siap.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span><i class="fas fa-times-circle"></i> Apakah bisa membatalkan booking?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Pembatalan dapat dilakukan dengan menghubungi kami. DP tidak dapat dikembalikan jika pembatalan dilakukan kurang dari 7 hari sebelum jadwal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+    </main>
+
+    <!-- Modal Syarat & Ketentuan -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Syarat & Ketentuan</h2>
+                <button class="modal-close" data-close="terms">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3>1. Definisi dan Interpretasi</h3>
+                <p>Dalam Syarat & Ketentuan ini, kecuali jika konteks menunjukkan sebaliknya, istilah-istilah berikut memiliki arti sebagai berikut:</p>
+                <ul>
+                    <li><strong>"Studio"</strong> berarti Bloom Studio</li>
+                    <li><strong>"Layanan"</strong> berarti layanan fotografi yang disediakan oleh Studio</li>
+                    <li><strong>"Klien"</strong> berarti pihak yang melakukan pemesanan layanan fotografi</li>
+                </ul>
+
+                <h3>2. Pemesanan dan Konfirmasi</h3>
+                <p>Klien dapat melakukan pemesanan melalui website atau hubungi langsung Studio. Setiap pemesanan harus dilengkapi dengan informasi lengkap dan akurat. Studio akan mengirimkan email konfirmasi dalam waktu 24 jam setelah pemesanan diterima.</p>
+
+                <h3>3. Pembayaran</h3>
+                <p>Pembayaran dilakukan dalam dua tahap:</p>
+                <ul>
+                    <li>DP 50% saat pemesanan untuk mengamankan jadwal</li>
+                    <li>Sisa 50% harus dilunasi sebelum sesi foto dimulai</li>
+                </ul>
+                <p>Metode pembayaran dapat berupa transfer bank, e-wallet, QRIS, atau tunai di studio.</p>
+
+                <h3>4. Pembatalan dan Perubahan Jadwal</h3>
+                <p>Pembatalan dapat dilakukan dengan memberitahu Studio paling lambat 3x24 jam sebelum jadwal sesi foto. DP yang telah dibayarkan tidak dapat dikembalikan dalam kondisi pembatalan oleh klien.</p>
+                <p>Perubahan jadwal dapat dilakukan maksimal 3x24 jam sebelum jadwal yang dijadwalkan.</p>
+
+                <h3>5. Hak dan Kewajiban Studio</h3>
+                <p>Studio berhak untuk:</p>
+                <ul>
+                    <li>Menggunakan foto hasil sesi untuk portfolio dan promosi (jika tidak ada persetujuan khusus)</li>
+                    <li>Menolak atau membatalkan pemesanan tanpa alasan khusus</li>
+                    <li>Mengubah jadwal sesi jika ada keperluan mendesak</li>
+                </ul>
+
+                <h3>6. Hak dan Kewajiban Klien</h3>
+                <p>Klien berhak untuk:</p>
+                <ul>
+                    <li>Mendapatkan hasil foto berkualitas sesuai dengan paket yang dipilih</li>
+                    <li>Meminta revisi jika ada ketidaksesuaian dengan persetujuan awal</li>
+                </ul>
+                <p>Klien berkewajiban untuk:</p>
+                <ul>
+                    <li>Datang tepat waktu pada jadwal yang telah disepakati</li>
+                    <li>Melunasi pembayaran sesuai dengan waktu yang ditentukan</li>
+                    <li>Mengikuti arahan dan panduan dari fotografer selama sesi</li>
+                </ul>
+
+                <h3>7. Penolakan Tanggung Jawab</h3>
+                <p>Studio tidak bertanggung jawab atas:</p>
+                <ul>
+                    <li>Cuaca atau kondisi alam yang tidak terduga</li>
+                    <li>Kehilangan atau kerusakan barang bawaan klien di studio</li>
+                    <li>Ketidakpuasan klien terhadap hasil yang subjektif</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Kebijakan Privasi -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Kebijakan Privasi</h2>
+                <button class="modal-close" data-close="privacy">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3>1. Pengumpulan Data</h3>
+                <p>Bloom Studio mengumpulkan data pribadi klien yang meliputi:</p>
+                <ul>
+                    <li>Nama lengkap</li>
+                    <li>Alamat email</li>
+                    <li>Nomor telepon</li>
+                    <li>Informasi pembayaran (rekening bank/e-wallet)</li>
+                    <li>Data pemesanan dan preferensi sesi foto</li>
+                </ul>
+
+                <h3>2. Penggunaan Data</h3>
+                <p>Data yang dikumpulkan digunakan untuk:</p>
+                <ul>
+                    <li>Memproses pemesanan dan pembayaran</li>
+                    <li>Mengirim konfirmasi dan notifikasi terkait sesi foto</li>
+                    <li>Menghubungi klien untuk kebutuhan penjadwalan atau pertanyaan</li>
+                    <li>Meningkatkan layanan dan pengalaman pengguna</li>
+                    <li>Keperluan hukum dan keamanan</li>
+                </ul>
+
+                <h3>3. Keamanan Data</h3>
+                <p>Bloom Studio berkomitmen untuk melindungi data pribadi klien dengan menggunakan enkripsi dan sistem keamanan yang sesuai. Namun, kami tidak dapat menjamin keamanan mutlak terhadap ancaman cyber atau akses tidak sah.</p>
+
+                <h3>4. Pembagian Data</h3>
+                <p>Kami tidak akan membagikan data pribadi klien kepada pihak ketiga tanpa persetujuan tertulis, kecuali:</p>
+                <ul>
+                    <li>Untuk memproses pembayaran melalui gateway pembayaran</li>
+                    <li>Ketika diwajibkan oleh hukum atau peraturan</li>
+                    <li>Untuk penyedia layanan yang membantu operasional Studio</li>
+                </ul>
+
+                <h3>5. Hak Klien</h3>
+                <p>Klien berhak untuk:</p>
+                <ul>
+                    <li>Mengakses data pribadi mereka</li>
+                    <li>Meminta koreksi atau pembaruan data</li>
+                    <li>Menghapus akun dan data pribadi mereka</li>
+                    <li>Menarik persetujuan penggunaan data kapan saja</li>
+                </ul>
+
+                <h3>6. Cookie dan Teknologi Pelacakan</h3>
+                <p>Website Bloom Studio menggunakan cookie untuk meningkatkan pengalaman pengguna. Klien dapat mengatur preferensi cookie melalui pengaturan browser mereka.</p>
+
+                <h3>7. Perubahan Kebijakan</h3>
+                <p>Bloom Studio berhak untuk mengubah Kebijakan Privasi ini sewaktu-waktu. Perubahan akan diumumkan melalui website dan berlaku efektif setelah diumumkan.</p>
+
+                <h3>8. Hubungi Kami</h3>
+                <p>Jika ada pertanyaan tentang Kebijakan Privasi ini, silakan hubungi kami melalui:</p>
+                <p><strong>Email:</strong> bloomstudio@gmail.com<br>
+                <strong>Telepon:</strong> (021) 456-7890<br>
+                <strong>Alamat:</strong> Jl. Studio Foto No. 123, Jakarta Selatan</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Bloom Studio</h3>
+                <p>Studio fotografi dengan konsep warm dan natural. Mengabadikan setiap momen berharga Anda dengan sentuhan artistik.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Studio Foto No. 123, Jakarta Selatan</p>
+                <p><i class="fas fa-phone"></i> (021) 456-7890</p>
+                <p><i class="fas fa-envelope"></i> bloomstudio@gmail.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Sat: 9:00-18:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Bloom Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set minimum date to today
+            const dateInput = document.getElementById('date');
+            if (dateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.min = today;
+                
+                // Set default to tomorrow
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                const tomorrowStr = tomorrow.toISOString().split('T')[0];
+                dateInput.value = tomorrowStr;
+            }
+            
+            // Disable Sundays only
+            if (dateInput) {
+                dateInput.addEventListener('change', function() {
+                    const selectedDate = new Date(this.value);
+                    const day = selectedDate.getDay();
+                    
+                    // 0 = Sunday only
+                    if (day === 0) {
+                        alert('Maaf, studio tutup pada hari Minggu. Silakan pilih hari Senin - Sabtu.');
+                        this.value = '';
+                        return;
+                    }
+                    
+                    // Update available time slots when date changes
+                    updateAvailableTimeSlots(this.value);
+                });
+            }
+            
+            // Phone number formatting
+            const phoneInput = document.getElementById('phone');
+            if (phoneInput) {
+                phoneInput.addEventListener('input', function() {
+                    this.value = this.value.replace(/[^0-9]/g, '');
+                    
+                    // Format as 0812-3456-7890
+                    if (this.value.length > 4 && this.value.length <= 8) {
+                        this.value = this.value.replace(/(\d{4})(\d{0,4})/, '$1-$2');
+                    } else if (this.value.length > 8) {
+                        this.value = this.value.replace(/(\d{4})(\d{4})(\d{0,4})/, '$1-$2-$3');
+                    }
+                });
+            }
+
+            // Payment Method Cards - Toggle on click
+            const paymentCards = document.querySelectorAll('.payment-method-card');
+            paymentCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const isActive = this.classList.contains('active');
+                    const details = this.querySelector('.payment-method-details');
+                    
+                    // Jika card ini sedang aktif, tutup saja
+                    if (isActive) {
+                        this.classList.remove('active');
+                        details.style.display = 'none';
+                    } else {
+                        // Jika card lain yang aktif, tutup dulu
+                        paymentCards.forEach(c => {
+                            c.classList.remove('active');
+                            c.querySelector('.payment-method-details').style.display = 'none';
+                        });
+                        
+                        // Buka card yang diklik
+                        this.classList.add('active');
+                        details.style.display = 'block';
+                    }
+                });
+            });
+
+            // Modal Syarat & Ketentuan dan Kebijakan Privasi
+            const termsLinks = document.querySelectorAll('.terms-link');
+            const termsModal = document.getElementById('termsModal');
+            const privacyModal = document.getElementById('privacyModal');
+            const closeButtons = document.querySelectorAll('.modal-close');
+
+            termsLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const type = this.getAttribute('data-terms');
+                    
+                    if (type === 'terms') {
+                        termsModal.classList.add('active');
+                    } else if (type === 'privacy') {
+                        privacyModal.classList.add('active');
+                    }
+                });
+            });
+
+            closeButtons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const type = this.getAttribute('data-close');
+                    
+                    if (type === 'terms') {
+                        termsModal.classList.remove('active');
+                    } else if (type === 'privacy') {
+                        privacyModal.classList.remove('active');
+                    }
+                });
+            });
+
+            // Close modal when clicking outside
+            [termsModal, privacyModal].forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.remove('active');
+                    }
+                });
+            });
+
+            // Close modal dengan ESC key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    termsModal.classList.remove('active');
+                    privacyModal.classList.remove('active');
+                }
+            });
+
+            // FAQ Accordion Toggle
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentElement;
+                    const isActive = faqItem.classList.contains('active');
+                    
+                    // Close all FAQ items
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Open clicked item if it wasn't active
+                    if (!isActive) {
+                        faqItem.classList.add('active');
+                    }
+                });
+            });
+
+            // Price Calculator
+            const packageSelect = document.getElementById('package');
+            const paymentDPRadio = document.getElementById('paymentDP');
+            const paymentFullRadio = document.getElementById('paymentFull');
+            const basePriceDisplay = document.getElementById('basePrice');
+            const totalPriceDisplay = document.getElementById('totalPrice');
+            const paymentAmountDisplay = document.getElementById('paymentAmount');
+            const paymentLabelDisplay = document.getElementById('paymentLabel');
+            
+            // Debug: Check if elements exist
+            if (!packageSelect || !paymentDPRadio || !paymentFullRadio || !basePriceDisplay) {
+                console.error('Price calculator elements not found!', {
+                    packageSelect, paymentDPRadio, paymentFullRadio, basePriceDisplay
+                });
+            }
+            
+            function formatCurrency(amount) {
+                return new Intl.NumberFormat('id-ID', {
+                    style: 'currency',
+                    currency: 'IDR',
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0
+                }).format(amount);
+            }
+            
+            function updatePrice() {
+                if (!packageSelect || !paymentDPRadio || !basePriceDisplay) {
+                    console.error('Cannot update price - elements missing');
+                    return;
+                }
+                
+                console.log('Package select value:', packageSelect.value);
+                console.log('Package select element:', packageSelect);
+                
+                const selectedPrice = parseFloat(packageSelect.value) || 0;
+                const isCustom = packageSelect.value === 'custom';
+                const isDP = paymentDPRadio ? paymentDPRadio.checked : true;
+                const paymentAmount = isDP ? selectedPrice * 0.5 : selectedPrice;
+                
+                console.log('Update price called:', { 
+                    rawValue: packageSelect.value,
+                    selectedPrice, 
+                    isCustom, 
+                    isDP, 
+                    paymentAmount 
+                });
+                
+                // Hide calculator jika custom, show pesan WhatsApp
+                const priceCalcSection = document.querySelector('.price-calculator-section');
+                const paymentTypeSection = document.querySelector('.payment-type-section');
+                const priceDisplay = document.querySelector('.price-display');
+                const priceSummary = document.querySelector('.price-summary');
+                const paymentMethodsSection = document.querySelector('.form-payment-section');
+                
+                if (isCustom) {
+                    priceDisplay.style.display = 'none';
+                    paymentTypeSection.style.display = 'none';
+                    priceSummary.style.display = 'none';
+                    paymentMethodsSection.style.display = 'none';
+                    
+                    // Show custom message
+                    if (!document.querySelector('.custom-quote-message')) {
+                        const customMsg = document.createElement('div');
+                        customMsg.className = 'custom-quote-message';
+                        customMsg.innerHTML = `
+                            <div style="background: #fff3cd; border: 2px solid var(--accent-gold); border-radius: var(--radius-md); padding: 1.5rem; text-align: center;">
+                                <i class="fas fa-info-circle" style="font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 0.5rem;"></i>
+                                <h4 style="color: var(--dark-brown); margin: 0.5rem 0;">Paket Custom</h4>
+                                <p style="color: var(--light-brown); margin: 0.5rem 0;">Untuk mendapatkan quote harga paket custom, silakan hubungi kami via WhatsApp:</p>
+                                <a href="https://wa.me/62887436251512" target="_blank" style="display: inline-block; background: #25D366; color: white; padding: 0.8rem 1.5rem; border-radius: var(--radius-md); text-decoration: none; font-weight: 600; margin-top: 1rem;">
+                                    <i class="fab fa-whatsapp"></i> Hubungi WhatsApp Kami
+                                </a>
+                            </div>
+                        `;
+                        priceCalcSection.appendChild(customMsg);
+                    }
+                } else {
+                    // Show calculator kembali
+                    priceDisplay.style.display = 'block';
+                    paymentTypeSection.style.display = 'block';
+                    priceSummary.style.display = 'block';
+                    paymentMethodsSection.style.display = 'block';
+                    
+                    const customMsg = document.querySelector('.custom-quote-message');
+                    if (customMsg) customMsg.remove();
+                    
+                    // Update displays
+                    basePriceDisplay.textContent = formatCurrency(selectedPrice);
+                    totalPriceDisplay.textContent = formatCurrency(selectedPrice);
+                    paymentAmountDisplay.textContent = formatCurrency(paymentAmount);
+                    
+                    // Update label
+                    if (isDP) {
+                        paymentLabelDisplay.textContent = 'Jumlah Pembayaran (DP 50%)';
+                    } else {
+                        paymentLabelDisplay.textContent = 'Jumlah Pembayaran (Lunas 100%)';
+                    }
+                }
+            }
+            
+            // Event listeners - Gabung semua fungsi untuk package change
+            packageSelect.addEventListener('change', function() {
+                // Update price calculator
+                updatePrice();
+                
+                // Toggle payment proof required based on package
+                const paymentProofInput = document.getElementById('paymentProof');
+                const paymentProofHelp = document.getElementById('paymentProofHelp');
+                const isCustom = packageSelect.value === 'custom';
+                
+                if (isCustom) {
+                    paymentProofInput.removeAttribute('required');
+                    if (paymentProofHelp) {
+                        paymentProofHelp.textContent = 'Tidak perlu upload bukti untuk paket custom. Silakan konsultasi via WhatsApp terlebih dahulu.';
+                        paymentProofHelp.style.color = 'var(--accent-gold)';
+                    }
+                } else {
+                    paymentProofInput.setAttribute('required', 'required');
+                    if (paymentProofHelp) {
+                        paymentProofHelp.textContent = 'Format: JPG, PNG, atau PDF (Max. 5MB). Wajib upload bukti pembayaran.';
+                        paymentProofHelp.style.color = 'var(--light-brown)';
+                    }
+                }
+            });
+            
+            paymentDPRadio.addEventListener('change', updatePrice);
+            paymentFullRadio.addEventListener('change', updatePrice);
+
+            // Deep-link package selection and scroll from packages page
+            const urlParams = new URLSearchParams(window.location.search);
+            const packageParam = urlParams.get('package');
+            const bookingFormSection = document.querySelector('.booking-form-section');
+            let autoSelectedPackage = false;
+
+            if (packageParam && packageSelect) {
+                const packageMap = {
+                    basic: '499000',
+                    standar: '899000',
+                    standard: '899000',
+                    premium: '1499000',
+                    wedding: '3999000',
+                    newborn: '1099000',
+                    birthday: '1499000',
+                    family: '1299000',
+                    wisuda: '699000',
+                    lainnya: 'custom',
+                    custom: 'custom'
+                };
+                const matchedValue = packageMap[packageParam.toLowerCase()];
+                
+                if (matchedValue) {
+                    packageSelect.value = matchedValue;
+                    packageSelect.dispatchEvent(new Event('change'));
+                    autoSelectedPackage = true;
+                }
+            }
+            
+            // Initial calculation
+            updatePrice();
+            
+            // ===== FUNGSI UNTUK CEK JAM YANG SUDAH DIBOOKING =====
+            async function getBookedSlots(date) {
+            try {
+                const response = await fetch(
+                GOOGLE_APPS_SCRIPT_URL +
+                '?action=getBookedSlots&date=' +
+                encodeURIComponent(date)
+                );
+
+                const result = await response.json();
+                return result?.data?.bookedSlots || [];
+
+            } catch (error) {
+                console.error('Error fetching booked slots:', error);
+                return [];
+            }
+            }
+
+            function normalizeTime(str) {
+            return str
+                .replace(/\s+/g, ' ')
+                .replace('–', '-')
+                .trim();
+            }
+
+            async function updateAvailableTimeSlots(selectedDate) {
+            const timeSelect = document.getElementById('time');
+            if (!timeSelect || !selectedDate) return;
+
+            const allTimeSlots = [
+                '09:00 - 10:00',
+                '10:00 - 11:00',
+                '11:00 - 12:00',
+                '13:00 - 14:00',
+                '14:00 - 15:00',
+                '15:00 - 16:00',
+                '16:00 - 17:00'
+            ];
+
+            const bookedSlots = await getBookedSlots(selectedDate);
+
+            // normalize booked slots sekali saja
+            const normalizedBooked = bookedSlots.map(normalizeTime);
+
+            timeSelect.innerHTML = '<option value="">Pilih Waktu</option>';
+
+            allTimeSlots.forEach(slot => {
+                const isBooked = normalizedBooked.includes(normalizeTime(slot));
+
+                if (!isBooked) {
+                const option = document.createElement('option');
+                option.value = slot;
+                option.textContent = slot;
+                timeSelect.appendChild(option);
+                }
+            });
+
+            if (normalizedBooked.length === allTimeSlots.length) {
+                const option = document.createElement('option');
+                option.textContent = 'Semua jam sudah terbooking';
+                option.disabled = true;
+                timeSelect.appendChild(option);
+            }
+            }
+            
+            // Booking Form Submit Handler
+            const bookingForm = document.getElementById('bookingForm');
+            const successModal = document.getElementById('successModal');
+            
+            // GANTI DENGAN DEPLOYMENT URL ANDA
+            const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzOlgL7zCSlz33GAT4CK5fHlUtq-bG8W8FCnGaiy7-lOgU88VlRMlGEEZ3RFgaEWVg7/exec';
+            const FILE_UPLOAD_URL = 'https://script.google.com/macros/s/AKfycbzUZHT9EpIeJvwa-Bbm-qUpqaLWML8XTIxZrgx2Y3leIBuehDNC1VtgGTVzAeeFfK__/exec';
+            
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // ===== AMBIL DATA FORM =====
+                    const name = document.getElementById('name').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const phone = document.getElementById('phone').value.trim();
+                    const packageSelect = document.getElementById('package');
+                    const packageValue = packageSelect.value;
+                    const packageName = packageSelect.options[packageSelect.selectedIndex].text;
+                    const people = document.getElementById('people').value;
+                    const bookingDate = document.getElementById('date').value;
+                    const bookingTime = document.getElementById('time').value;
+                    const concept = document.getElementById('concept').value || 'Belum ditentukan';
+                    const background = document.getElementById('background').value;
+                    const message = document.getElementById('message').value.trim() || '';
+                    
+                    // Generate booking code
+                    const bookingCode = 'BSM' + Math.random().toString(36).substr(2, 9).toUpperCase();
+                    
+                    // Format date
+                    let formattedDate = 'Invalid Date';
+                    if (bookingDate) {
+                        const dateObj = new Date(bookingDate + 'T00:00:00');
+                        formattedDate = dateObj.toLocaleDateString('id-ID', { 
+                            weekday: 'long', 
+                            year: 'numeric', 
+                            month: 'long', 
+                            day: 'numeric' 
+                        });
+                    }
+
+                    // ===== UPDATE MODAL =====
+                    document.getElementById('successName').textContent = name;
+                    document.getElementById('successEmail').textContent = email;
+                    document.getElementById('successPackage').textContent = packageName;
+                    document.getElementById('successCode').textContent = bookingCode;
+                    document.getElementById('successDate').textContent = formattedDate + ' - ' + bookingTime;
+                    
+                    // ===== WHATSAPP MESSAGE =====
+                    const whatsappMessage = `*BOOKING SESI FOTO - BLOOM STUDIO*
+
+                    Halo, saya ingin mengkonfirmasi booking saya dengan detail berikut:
+
+                    *Data Pelanggan*
+                    Nama: ${name}
+                    Email: ${email}
+                    No. Telepon: ${phone}
+
+                    *Detail Booking*
+                    Kode Booking: ${bookingCode}
+                    Paket: ${packageName}
+                    Jumlah Orang: ${people}
+                    Tanggal: ${formattedDate}
+                    Waktu: ${bookingTime}
+                    Konsep Foto: ${concept}
+                    Background: ${background}
+
+                    *Pesan Tambahan*
+                    ${message}
+
+                    Mohon dikonfirmasi untuk ketersediaan jadwal dan detail pembayaran.
+
+                    Terima kasih!`;
+                    
+                    const whatsappLink = 'https://wa.me/62887436251512?text=' + encodeURIComponent(whatsappMessage);
+                    successModal.dataset.whatsappLink = whatsappLink;
+                    
+                    // ===== AMBIL DATA PEMBAYARAN =====
+                    const selectedPrice = parseFloat(packageValue) || 0;
+                    const paymentType = document.querySelector('input[name="paymentType"]:checked')?.value || 'dp';
+                    const isDP = paymentType === 'dp';
+                    const paymentAmount = isDP ? selectedPrice * 0.5 : selectedPrice;
+                    const paymentPercentage = isDP ? '50%' : '100%';
+                    
+                    // Get selected payment method
+                    const selectedPaymentMethod = document.querySelector('.payment-method-card.active');
+                    const paymentMethod = selectedPaymentMethod ? selectedPaymentMethod.getAttribute('data-method') : 'Belum dipilih';
+                    const paymentMethodName = paymentMethod === 'transfer' ? 'Transfer Bank' : 
+                                             paymentMethod === 'ewallet' ? 'E-Wallet' :
+                                             paymentMethod === 'qris' ? 'QRIS' : 'Belum dipilih';
+                    
+                    // ===== CONVERT FILE BUKTI PEMBAYARAN KE BASE64 =====
+                    const paymentProofInput = document.getElementById('paymentProof');
+                    const paymentProofFile = paymentProofInput.files[0];
+                    
+                    // Function to convert file to base64
+                    const convertFileToBase64 = (file) => {
+                        return new Promise((resolve, reject) => {
+                            const reader = new FileReader();
+                            reader.onload = () => resolve(reader.result);
+                            reader.onerror = reject;
+                            reader.readAsDataURL(file);
+                        });
+                    };
+                    
+                    // ===== DATA UNTUK GOOGLE SHEETS =====
+                    const bookingData = {
+                        name: name,
+                        email: email,
+                        phone: phone,
+                        package: packageName.replace(' (Popular)', ''),
+                        people: people,
+                        date: bookingDate,
+                        time: bookingTime,
+                        concept: concept,
+                        background: background,
+                        message: message,
+                        bookingCode: bookingCode,
+                        packagePrice: selectedPrice,
+                        paymentType: paymentPercentage,
+                        paymentAmount: paymentAmount,
+                        paymentMethod: paymentMethodName,
+                        status: 'Pending'
+                    };
+                    
+                    // ===== UPLOAD FILE KE GOOGLE DRIVE & KIRIM DATA KE SHEETS =====
+                    (async () => {
+
+                    // =============================
+                    // 1️⃣ UPLOAD FILE KE GOOGLE DRIVE
+                    // =============================
+                    if (paymentProofFile) {
+                        try {
+                        console.log('Uploading payment proof to Drive...');
+
+                        const base64Data = await convertFileToBase64(paymentProofFile);
+                        const ext = paymentProofFile.name.split('.').pop();
+                        const customFileName = `${bookingCode}.${ext}`;
+
+                        fetch(FILE_UPLOAD_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        body: JSON.stringify({
+                            fileName: customFileName,        // ⬅️ NAMA FILE DARI BOOKING CODE
+                            fileType: paymentProofFile.type,
+                            fileBase64: base64Data.split(',')[1]
+                        })
+                        });
+
+
+                        console.log('✓ File berhasil diupload ke Google Drive');
+
+                        } catch (err) {
+                        console.error('✗ Gagal upload file ke Drive:', err);
+                        alert('Gagal upload bukti pembayaran');
+                        return; // STOP kalau upload gagal
+                        }
+                    }
+
+                    // =============================
+                    // 2️⃣ KIRIM DATA BOOKING KE SHEETS (TANPA FILE)
+                    // =============================
+                    fetch(GOOGLE_APPS_SCRIPT_URL, {
+                        method: 'POST',
+                        headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: new URLSearchParams(bookingData)
+                    })
+                    .then(() => {
+                        console.log('✓ Booking data sent to Sheets');
+                    })
+                    .catch(err => {
+                        console.error('✗ Error kirim ke Sheets:', err);
+                    });
+
+                    })();
+
+                    // ===== SIMPAN LOCAL STORAGE =====
+                    saveBookingToLocalStorage(bookingData);
+                    
+                    // ===== SHOW SUCCESS MODAL =====
+                    successModal.classList.add('active');
+                    successModal.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // ===== RESET FORM SETELAH DELAY =====
+                    setTimeout(() => {
+                        bookingForm.reset();
+                        updatePrice();
+
+                    }, 500);
+                });
+            }
+            
+            // Save booking to localStorage
+            function saveBookingToLocalStorage(bookingData) {
+                const bookings = JSON.parse(localStorage.getItem('bloomBookings') || '[]');
+                bookings.push({
+                    ...bookingData,
+                    createdAt: new Date().toISOString()
+                });
+                localStorage.setItem('bloomBookings', JSON.stringify(bookings));
+            }
+            
+            // Close success modal
+            const closeSuccessBtn = document.querySelector('[data-close="success"]');
+            if (closeSuccessBtn) {
+                closeSuccessBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    successModal.classList.remove('active');
+                });
+            }
+            
+            // WhatsApp Send Button
+            const whatsappSendBtn = document.getElementById('whatsappSendBtn');
+            if (whatsappSendBtn) {
+                whatsappSendBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const whatsappLink = successModal.dataset.whatsappLink;
+                    if (whatsappLink) {
+                        window.open(whatsappLink, '_blank');
+                    }
+                });
+            }
+            
+            // Close modal when clicking outside
+            if (successModal) {
+                successModal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

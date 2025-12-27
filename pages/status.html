@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Status Booking - Bloom Studio</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../assets/icons/camera-icon.png">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <i class="bi bi-flower1 me-2"></i>
+                <span>Bloom Studio</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="packages.html" class="nav-link"><i class="fas fa-box-open"></i> Paket</a></li>
+                <li><a href="testimonials.html" class="nav-link"><i class="fas fa-comment"></i> Testimoni</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        <i class="fas fa-calendar-check"></i> Pemesanan <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="booking.html"><i class="fas fa-book"></i> Booking</a></li>
+                        <li><a href="status.html" class="active"><i class="fas fa-clipboard-list"></i> Status</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-container">
+        <!-- Status Hero -->
+        <section class="page-section">
+            <div class="page-section-content">
+                <div class="booking-hero">
+                    <h1>Cek Status Booking</h1>
+                    <p>Masukkan ID Booking Anda untuk melihat status pemesanan dan informasi sesi foto</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Status Container -->
+        <div class="status-container">
+            <!-- Status Form -->
+            <div class="status-form-container">
+                <h2><i class="fas fa-search"></i> Cari Booking</h2>
+                <p>Masukkan ID Booking yang Anda terima di email konfirmasi</p>
+                
+                <form id="statusForm">
+                    <div class="status-input-group">
+                        <input type="text" id="bookingId" placeholder="Contoh: BS123ABC456" required>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-search"></i> Cek Status
+                        </button>
+                    </div>
+                    <p class="form-help">
+                        <i class="fas fa-info-circle"></i> ID Booking dikirim ke email Anda setelah konfirmasi booking
+                    </p>
+                </form>
+            </div>
+
+            <!-- Status Result -->
+            <div id="statusResult" class="status-result" style="display: none;">
+                <!-- Result will be displayed here -->
+            </div>
+
+            <!-- Recent Bookings (from localStorage) -->
+            <div class="recent-bookings" id="recentBookings" style="display: none;">
+                <h3><i class="fas fa-history"></i> Riwayat Booking Terbaru</h3>
+                <div class="bookings-list" id="bookingsList">
+                    <!-- Recent bookings will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Bloom Studio</h3>
+                <p>Studio fotografi dengan konsep warm dan natural. Mengabadikan setiap momen berharga Anda dengan sentuhan artistik.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Studio Foto No. 123, Jakarta Selatan</p>
+                <p><i class="fas fa-phone"></i> (021) 456-7890</p>
+                <p><i class="fas fa-envelope"></i> bloomstudio@gmail.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Sat: 9:00-18:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Bloom Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        // Init page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Jangan tampilkan riwayat booking otomatis
+            const recentSection = document.getElementById('recentBookings');
+            if (recentSection) recentSection.style.display = 'none';
+            
+            // Status form is handled by main script.js
+            
+            // Auto-focus on booking ID input
+            const bookingIdInput = document.getElementById('bookingId');
+            if (bookingIdInput) {
+                bookingIdInput.focus();
+            }
+
+            // Handle form submission
+            const statusForm = document.getElementById('statusForm');
+            if (statusForm) {
+                statusForm.addEventListener('submit', function(e) {
+                    const resultDiv = document.getElementById('statusResult');
+                    if (resultDiv) {
+                        resultDiv.style.display = 'block';
+                    }
+                    // Selalu sembunyikan riwayat
+                    const recent = document.getElementById('recentBookings');
+                    if (recent) recent.style.display = 'none';
+                });
+            }
+        });
+        
+        function loadRecentBookings() {
+            const bookings = JSON.parse(localStorage.getItem('studioBookings')) || [];
+            const bookingsList = document.getElementById('bookingsList');
+            const recentBookingsSection = document.getElementById('recentBookings');
+            
+            if (bookings.length === 0) {
+                recentBookingsSection.style.display = 'none';
+                return;
+            }
+            
+            // Sort by date (newest first) and take latest 5
+            const recent = bookings
+                .sort((a, b) => new Date(b.created) - new Date(a.created))
+                .slice(0, 5);
+            
+            bookingsList.innerHTML = '';
+            
+            recent.forEach(booking => {
+                const bookingElement = document.createElement('div');
+                bookingElement.className = 'booking-item';
+                bookingElement.innerHTML = `
+                    <div class="booking-id">${booking.id}</div>
+                    <div class="booking-info">
+                        <div class="booking-name">${booking.name}</div>
+                        <div class="booking-date">${new Date(booking.date).toLocaleDateString('id-ID')} • ${booking.time}</div>
+                    </div>
+                    <div class="booking-status ${getStatusClass(booking.status)}">${getStatusText(booking.status)}</div>
+                    <button class="booking-action" onclick="checkStatus('${booking.id}')">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                `;
+                bookingsList.appendChild(bookingElement);
+            });
+        }
+        
+        function getStatusClass(status) {
+            const statusClasses = {
+                'pending': 'status-pending',
+                'confirmed': 'status-confirmed',
+                'in_progress': 'status-progress',
+                'completed': 'status-completed',
+                'cancelled': 'status-cancelled'
+            };
+            return statusClasses[status] || 'status-pending';
+        }
+        
+        function getStatusText(status) {
+            const statusTexts = {
+                'pending': 'Menunggu',
+                'confirmed': 'Terkonfirmasi',
+                'in_progress': 'Diproses',
+                'completed': 'Selesai',
+                'cancelled': 'Dibatalkan'
+            };
+            return statusTexts[status] || status;
+        }
+        
+        function checkStatus(bookingId) {
+            // Set the booking ID in the input
+            document.getElementById('bookingId').value = bookingId;
+            
+            // Trigger form submission
+            document.getElementById('statusForm').dispatchEvent(new Event('submit'));
+            
+            // Scroll to result
+            document.getElementById('statusResult').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Add styles for booking items
+        const style = document.createElement('style');
+        style.textContent = `
+            .support-section {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .recent-bookings {
+                background: var(--white);
+                padding: var(--spacing-lg);
+                border-radius: var(--radius-lg);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+                margin-bottom: var(--spacing-xl);
+            }
+            
+            .recent-bookings h3 {
+                color: var(--dark-brown);
+                margin-bottom: var(--spacing-md);
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 1.3rem;
+            }
+            
+            .bookings-list {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .booking-item {
+                display: flex;
+                align-items: center;
+                padding: var(--spacing-md);
+                background: var(--light-cream);
+                border-radius: var(--radius-sm);
+                transition: all 0.3s ease;
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+            
+            .booking-item:hover {
+                background: var(--cream);
+                transform: translateX(5px);
+            }
+            
+            .booking-id {
+                background: var(--medium-brown);
+                color: var(--cream);
+                padding: 6px 12px;
+                border-radius: var(--radius-sm);
+                font-family: monospace;
+                font-size: 0.9rem;
+                white-space: nowrap;
+            }
+            
+            .booking-info {
+                flex: 1;
+                min-width: 150px;
+            }
+            
+            .booking-name {
+                font-weight: 600;
+                color: var(--dark-brown);
+            }
+            
+            .booking-date {
+                font-size: 0.9rem;
+                color: var(--light-brown);
+            }
+            
+            .booking-status {
+                padding: 4px 12px;
+                border-radius: 20px;
+                font-size: 0.85rem;
+                font-weight: 600;
+            }
+            
+            .booking-action {
+                background: var(--accent-gold);
+                color: var(--dark-brown);
+                border: none;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .booking-action:hover {
+                background: var(--dark-brown);
+                color: var(--cream);
+                transform: scale(1.1);
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Gunakan URL Web App yang sama dengan booking.html (method GET)
+        const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzOlgL7zCSlz33GAT4CK5fHlUtq-bG8W8FCnGaiy7-lOgU88VlRMlGEEZ3RFgaEWVg7/exec';
+        
+        const statusForm = document.getElementById('statusForm');
+        const bookingIdInput = document.getElementById('bookingId');
+        const statusResult = document.getElementById('statusResult');
+        const recentBookings = document.getElementById('recentBookings');
+        const bookingsList = document.getElementById('bookingsList');
+        
+        // Load recent bookings dari localStorage
+        function loadRecentBookings() {
+            const bookings = JSON.parse(localStorage.getItem('bloomBookings') || '[]');
+            
+            if (bookings.length === 0) {
+                recentBookings.style.display = 'none';
+                return;
+            }
+            
+            // Sort by date terbaru
+            bookings.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+            
+            // Show max 5 recent
+            const recentItems = bookings.slice(0, 5);
+            
+            bookingsList.innerHTML = recentItems.map(booking => `
+                <div class="booking-item" onclick="document.getElementById('bookingId').value = '${booking.bookingCode}'; searchBooking();">
+                    <div class="booking-info">
+                        <p class="booking-name">${booking.name}</p>
+                        <p class="booking-code">${booking.bookingCode}</p>
+                        <p class="booking-date">${booking.date}</p>
+                    </div>
+                    <div class="booking-status">
+                        <span class="status-badge pending">Menunggu Konfirmasi</span>
+                    </div>
+                </div>
+            `).join('');
+            
+            recentBookings.style.display = 'block';
+        }
+        
+        // Search booking
+        async function searchBooking() {
+            const bookingCode = bookingIdInput.value.trim();
+            
+            if (!bookingCode) {
+                alert('Masukkan kode booking');
+                return;
+            }
+            
+            // Sembunyikan riwayat ketika melakukan pencarian
+            recentBookings.style.display = 'none';
+            
+            statusResult.style.display = 'none';
+            statusResult.innerHTML = '<p style="text-align: center;"><i class="fas fa-spinner fa-spin"></i> Mencari...</p>';
+            statusResult.style.display = 'block';
+            
+            // Langsung cek Google Sheets via Apps Script (doGet) - jangan cek localStorage dulu
+            try {
+                const response = await fetch(`${GOOGLE_APPS_SCRIPT_URL}?code=${encodeURIComponent(bookingCode)}`);
+                const result = await response.json();
+                
+                if (result.status === 'found' && result.data) {
+                    const d = result.data;
+                    // Langsung pass semua data dari Google Apps Script
+                    displayBookingStatus(d, d.status || 'Menunggu Konfirmasi');
+                } else {
+                    statusResult.innerHTML = `
+                        <div class="status-error">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <h3>Booking Tidak Ditemukan</h3>
+                            <p>Kode booking "<strong>${bookingCode}</strong>" tidak ditemukan dalam sistem.</p>
+                            <p>Pastikan kode booking sudah benar dan coba lagi.</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                statusResult.innerHTML = `
+                    <div class="status-error">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h3>Terjadi Kesalahan</h3>
+                        <p>Tidak dapat mengambil data dari server. Coba lagi beberapa saat.</p>
+                    </div>
+                `;
+            }
+        }
+        
+        // Display booking status
+        function displayBookingStatus(booking, status) {
+            const bookingDate = new Date(booking.date).toLocaleDateString('id-ID', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            
+            console.log('Status received:', status);
+            
+            let statusColor = 'pending';
+            let displayStatus = status || 'Menunggu Konfirmasi';
+            
+            // Normalize status
+            if (status === 'Dikonfirmasi' || status === 'Confirmed') {
+                statusColor = 'confirmed';
+                displayStatus = 'Dikonfirmasi';
+            } else if (status === 'Selesai' || status === 'Completed') {
+                statusColor = 'completed';
+                displayStatus = 'Selesai';
+            } else if (status === 'Diproses' || status === 'In Progress') {
+                statusColor = 'in_progress';
+                displayStatus = 'Diproses';
+            } else if (status === 'Dibatalkan' || status === 'Cancelled') {
+                statusColor = 'cancelled';
+                displayStatus = 'Dibatalkan';
+            } else {
+                statusColor = 'pending';
+                displayStatus = 'Menunggu Konfirmasi';
+            }
+            
+            statusResult.innerHTML = `
+                <div class="booking-detail">
+                    <div class="detail-header">
+                        <div>
+                            <h3>Booking Ditemukan ✓</h3>
+                            <p class="booking-code-display">${booking.kodeBooking}</p>
+                        </div>
+                        <span class="status-badge ${statusColor}">${displayStatus}</span>
+                    </div>
+                    
+                    <div class="detail-grid">
+                        <div class="detail-box">
+                            <label>Nama Pelanggan</label>
+                            <p>${booking.nama}</p>
+                        </div>
+                        <div class="detail-box">
+                            <label>Email</label>
+                            <p>${booking.email}</p>
+                        </div>
+                        <div class="detail-box">
+                            <label>No. Telepon</label>
+                            <p>${booking.telepon}</p>
+                        </div>
+                        <div class="detail-box">
+                            <label>Paket Booking</label>
+                            <p>${booking.paket}</p>
+                        </div>
+                        <div class="detail-box">
+                            <label>Tanggal</label>
+                            <p>${bookingDate}</p>
+                        </div>
+                        <div class="detail-box">
+                            <label>Waktu</label>
+                            <p>${booking.waktu}</p>
+                        </div>
+                        <div class="detail-box">
+                            <label>Jumlah Orang</label>
+                            <p>${booking.jumlahOrang}</p>
+                        </div>
+                        <div class="detail-box">
+                            <label>Konsep Foto</label>
+                            <p>${booking.konsep || '-'}</p>
+                        </div>
+                        <div class="detail-box full-width">
+                            <label>Background</label>
+                            <p>${booking.background || '-'}</p>
+                        </div>
+                        <div class="detail-box full-width">
+                            <label>Pesan Tambahan</label>
+                            <p>${booking.pesan ? booking.pesan : '-'}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="status-message">
+                        <p><i class="fas fa-info-circle"></i> Tim kami akan menghubungi Anda untuk konfirmasi lebih lanjut.</p>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Form submit
+        statusForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            searchBooking();
+        });
+        
+        // Jangan tampilkan riwayat otomatis
+    </script>
+</body>
+</html>

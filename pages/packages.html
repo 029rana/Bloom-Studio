@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paket Foto - Bloom Studio</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../assets/icons/camera-icon.png">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <i class="bi bi-flower1 me-2"></i>
+                <span>Bloom Studio</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="packages.html" class="nav-link active"><i class="fas fa-box-open"></i> Paket</a></li>
+                <li><a href="testimonials.html" class="nav-link"><i class="fas fa-comment"></i> Testimoni</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        <i class="fas fa-calendar-check"></i> Pemesanan <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="booking.html"><i class="fas fa-book"></i> Booking</a></li>
+                        <li><a href="status.html"><i class="fas fa-clipboard-list"></i> Status</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Packages Hero -->
+    <section class="packages-hero">
+        <div class="packages-hero-content">
+            <h1>Paket <span class="highlight">Fotografi Kami</span></h1>
+            <p>Pilih paket yang sesuai dengan kebutuhan Anda. Setiap paket dirancang untuk memberikan pengalaman fotografi terbaik.</p>
+            <div class="hero-buttons">
+                <a href="../index.html" class="btn-primary">Kembali ke Home</a>
+                <a href="booking.html" class="btn-secondary">Booking Sekarang</a>
+            </div>
+        </div>
+        <div class="packages-hero-image">
+            <div class="image-frame">
+                <img src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Studio Photography" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://studiopelangi.id/wp-content/uploads/2019/06/crew-editing-pengalaman.jpg';">
+            </div>
+        </div>
+    </section>
+
+    <main class="page-container">
+
+        <!-- Packages Grid -->
+        <section class="page-section">
+            <div class="page-section-content">
+                <div class="section-header">
+                    <h2 class="section-title">Pilihan Paket Fotografi</h2>
+                    <p class="section-subtitle">Berbagai paket dengan harga dan fasilitas yang dapat disesuaikan dengan kebutuhan Anda</p>
+                </div>
+                
+                <section class="packages-grid">
+            <!-- Basic -->
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>Basic</h3>
+                    <div class="package-price">Rp 499K</div>
+                    <p class="package-duration">1-2 Jam Sesi Foto</p>
+                </div>
+                <div class="package-body">
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> <span>1 Photographer</span></li>
+                        <li><i class="fas fa-check"></i> <span>30 Foto Hasil Edit</span></li>
+                        <li><i class="fas fa-check"></i> <span>1 Ganti Kostum</span></li>
+                        <li><i class="fas fa-check"></i> <span>1 Backdrop Pilihan</span></li>
+                        <li><i class="fas fa-check"></i> <span>Soft Copy Digital</span></li>
+                        <li><i class="fas fa-times"></i> <span>Makeup Artist</span></li>
+                        <li><i class="fas fa-times"></i> <span>Print Foto</span></li>
+                    </ul>
+                    <div class="package-actions">
+                        <a href="booking.html?package=basic" class="btn-primary">Pilih Paket</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Standar (Popular) -->
+            <div class="package-card popular">
+                <div class="package-header">
+                    <div class="package-popular">POPULAR</div>
+                    <h3>Standar</h3>
+                    <div class="package-price">Rp 899K</div>
+                    <p class="package-duration">2-3 Jam Sesi Foto</p>
+                </div>
+                <div class="package-body">
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> <span>1 Photographer</span></li>
+                        <li><i class="fas fa-check"></i> <span>50 Foto Hasil Edit</span></li>
+                        <li><i class="fas fa-check"></i> <span>2 Ganti Kostum</span></li>
+                        <li><i class="fas fa-check"></i> <span>2 Backdrop Pilihan</span></li>
+                        <li><i class="fas fa-check"></i> <span>Soft Copy Digital</span></li>
+                        <li><i class="fas fa-check"></i> <span>Basic Makeup</span></li>
+                        <li><i class="fas fa-check"></i> <span>Print Foto 10R (1 pcs)</span></li>
+                    </ul>
+                    <div class="package-actions">
+                        <a href="booking.html?package=standar" class="btn-primary">Pilih Paket</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Premium -->
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>Premium</h3>
+                    <div class="package-price">Rp 1.499K</div>
+                    <p class="package-duration">3-4 Jam Sesi Foto</p>
+                </div>
+                <div class="package-body">
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> <span>2 Photographers</span></li>
+                        <li><i class="fas fa-check"></i> <span>80 Foto Hasil Edit</span></li>
+                        <li><i class="fas fa-check"></i> <span>3 Ganti Kostum</span></li>
+                        <li><i class="fas fa-check"></i> <span>3 Backdrop Pilihan</span></li>
+                        <li><i class="fas fa-check"></i> <span>Soft Copy Digital</span></li>
+                        <li><i class="fas fa-check"></i> <span>Professional Makeup</span></li>
+                        <li><i class="fas fa-check"></i> <span>Print Foto 10R + Frame</span></li>
+                    </ul>
+                    <div class="package-actions">
+                        <a href="booking.html?package=premium" class="btn-primary">Pilih Paket</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wedding -->
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>Wedding</h3>
+                    <div class="package-price">Rp 3.999K</div>
+                    <p class="package-duration">Full Day</p>
+                </div>
+                <div class="package-body">
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> <span>2 Photographers + Assistant</span></li>
+                        <li><i class="fas fa-check"></i> <span>200+ Foto Hasil Edit</span></li>
+                        <li><i class="fas fa-check"></i> <span>Pre-Wedding Session</span></li>
+                        <li><i class="fas fa-check"></i> <span>Full Wedding Coverage</span></li>
+                        <li><i class="fas fa-check"></i> <span>Album Wedding Hard Cover</span></li>
+                        <li><i class="fas fa-check"></i> <span>All Soft Copy Digital</span></li>
+                        <li><i class="fas fa-check"></i> <span>Video Highlight (3-5 menit)</span></li>
+                    </ul>
+                    <div class="package-actions">
+                        <a href="booking.html?package=wedding" class="btn-primary">Pilih Paket</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newborn -->
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>Newborn</h3>
+                    <div class="package-price">Rp 1.099K</div>
+                    <p class="package-duration">2-3 Jam (Fleksibel)</p>
+                </div>
+                <div class="package-body">
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> <span>1 Photographer + Assistant</span></li>
+                        <li><i class="fas fa-check"></i> <span>25 Foto Hasil Edit</span></li>
+                        <li><i class="fas fa-check"></i> <span>2 Setup / Backdrop Bayi</span></li>
+                        <li><i class="fas fa-check"></i> <span>Properti steril & baby-safe</span></li>
+                        <li><i class="fas fa-check"></i> <span>Home service tersedia</span></li>
+                        <li><i class="fas fa-check"></i> <span>Include foto orang tua & kakak</span></li>
+                        <li><i class="fas fa-check"></i> <span>Soft Copy Digital tone warm</span></li>
+                    </ul>
+                    <div class="package-actions">
+                        <a href="booking.html?package=newborn" class="btn-primary">Pilih Paket</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Birthday -->
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>Birthday</h3>
+                    <div class="package-price">Rp 1.499K</div>
+                    <p class="package-duration">3-4 Jam Liputan</p>
+                </div>
+                <div class="package-body">
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> <span>1 Photographer + Lighting Kit</span></li>
+                        <li><i class="fas fa-check"></i> <span>120+ Foto Hasil Edit</span></li>
+                        <li><i class="fas fa-check"></i> <span>Dokumentasi dekorasi & candid</span></li>
+                        <li><i class="fas fa-check"></i> <span>Foto grup keluarga & teman</span></li>
+                        <li><i class="fas fa-check"></i> <span>Highlight momen tiup lilin</span></li>
+                        <li><i class="fas fa-check"></i> <span>Soft Copy Digital</span></li>
+                        <li><i class="fas fa-check"></i> <span>Print foto opsional</span></li>
+                    </ul>
+                    <div class="package-actions">
+                        <a href="booking.html?package=birthday" class="btn-primary">Pilih Paket</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Family -->
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>Family</h3>
+                    <div class="package-price">Rp 1.299K</div>
+                    <p class="package-duration">2-3 Jam Sesi Foto</p>
+                </div>
+                <div class="package-body">
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> <span>1 Photographer</span></li>
+                        <li><i class="fas fa-check"></i> <span>60 Foto Hasil Edit</span></li>
+                        <li><i class="fas fa-check"></i> <span>Multiple poses & group shots</span></li>
+                        <li><i class="fas fa-check"></i> <span>3 Backdrop Pilihan</span></li>
+                        <li><i class="fas fa-check"></i> <span>Soft Copy Digital</span></li>
+                        <li><i class="fas fa-check"></i> <span>Family Album 20 Pages</span></li>
+                        <li><i class="fas fa-check"></i> <span>Print 5R (5 pcs)</span></li>
+                    </ul>
+                    <div class="package-actions">
+                        <a href="booking.html?package=family" class="btn-primary">Pilih Paket</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wisuda -->
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>Wisuda</h3>
+                    <div class="package-price">Rp 699K</div>
+                    <p class="package-duration">1-2 Jam Sesi Foto</p>
+                </div>
+                <div class="package-body">
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> <span>1 Photographer</span></li>
+                        <li><i class="fas fa-check"></i> <span>40 Foto Hasil Edit</span></li>
+                        <li><i class="fas fa-check"></i> <span>2 Outfit (toga + casual)</span></li>
+                        <li><i class="fas fa-check"></i> <span>2 Backdrop indoor/outdoor</span></li>
+                        <li><i class="fas fa-check"></i> <span>Soft Copy Digital</span></li>
+                        <li><i class="fas fa-check"></i> <span>Print 10R (1 pcs)</span></li>
+                        <li><i class="fas fa-check"></i> <span>Properti toga & papan nama</span></li>
+                    </ul>
+                    <div class="package-actions">
+                        <a href="booking.html?package=wisuda" class="btn-primary">Pilih Paket</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lainnya / Custom -->
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>Lainnya</h3>
+                    <div class="package-price">Custom</div>
+                    <p class="package-duration">Sesuai Kebutuhan</p>
+                </div>
+                <div class="package-body">
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> <span>Konsultasi konsep & rundown</span></li>
+                        <li><i class="fas fa-check"></i> <span>Durasi & tim disesuaikan</span></li>
+                        <li><i class="fas fa-check"></i> <span>Indoor, outdoor, atau on-location</span></li>
+                        <li><i class="fas fa-check"></i> <span>Korporasi, produk, atau event</span></li>
+                        <li><i class="fas fa-check"></i> <span>Output foto/video sesuai brief</span></li>
+                        <li><i class="fas fa-check"></i> <span>Termin & invoice profesional</span></li>
+                        <li><i class="fas fa-check"></i> <span>Prioritas jadwal khusus</span></li>
+                    </ul>
+                    <div class="package-actions">
+                        <a href="booking.html?package=lainnya" class="btn-primary">Diskusikan</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Background Selection -->
+        <section class="page-section background-selection">
+            <div class="page-section-content">
+                <div class="section-header">
+                    <h2 class="section-title">Pilih Background</h2>
+                    <p class="section-subtitle">Pilih background sesuai yang anda inginkan</p>
+                </div>
+                
+                <div class="background-cards">
+                    <!-- Card Family -->
+                    <div class="background-card">
+                        <h3>Background Family</h3>
+                        <div class="background-options">
+                            <div class="background-item">
+                                <img src="../img/Backgorund Paket Family_1.jpeg" alt="Background Family 1" data-code="BF1" title="Kode: BF1">
+                                <span class="background-code">BF1</span>
+                            </div>
+                            <div class="background-item">
+                                <img src="../img/Backgorund Paket Family_2.jpeg" alt="Background Family 2" data-code="BF2" title="Kode: BF2">
+                                <span class="background-code">BF2</span>
+                            </div>
+                            <div class="background-item">
+                                <img src="../img/Backgorund Paket Family_3.jpeg" alt="Background Family 3" data-code="BF3" title="Kode: BF3">
+                                <span class="background-code">BF3</span>
+                            </div>
+                            <div class="background-item">
+                                <img src="../img/Backgorund Paket Family_4.jpeg" alt="Background Family 4" data-code="BF4" title="Kode: BF4">
+                                <span class="background-code">BF4</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card Newborn -->
+                    <div class="background-card">
+                        <h3>Background Newborn</h3>
+                        <div class="background-options">
+                            <div class="background-item">
+                                <img src="../img/Backround Paket Newborn_2.jpeg" alt="Background Newborn 2" data-code="NB1" title="Kode: NB1">
+                                <span class="background-code">NB1</span>
+                            </div>
+                            <div class="background-item">
+                                <img src="../img/Backround Paket Newborn_3.jpeg" alt="Background Newborn 3" data-code="NB2" title="Kode: NB2">
+                                <span class="background-code">NB2</span>
+                            </div>
+                            <div class="background-item">
+                                <img src="../img/Backround Paket Newborn_4.jpeg" alt="Background Newborn 4" data-code="NB3" title="Kode: NB3">
+                                <span class="background-code">NB3</span>
+                            </div>
+                            <div class="background-item">
+                                <img src="../img/Backround Paket Newborn_1.jpeg" alt="Background Newborn 1" data-code="NB4" title="Kode: NB4">
+                                <span class="background-code">NB4</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card Birthday -->
+                    <div class="background-card">
+                        <h3>Background Birthday</h3>
+                        <div class="background-options">
+                            <div class="background-item">
+                                <img src="../img/Backround Paket Birthday Anak_1.jpeg" alt="Background Birthday 1" data-code="BD1" title="Kode: BD1">
+                                <span class="background-code">BD1</span>
+                            </div>
+                            <div class="background-item">
+                                <img src="../img/Backround Paket Birthday Anak_2.jpeg" alt="Background Birthday 2" data-code="BD2" title="Kode: BD2">
+                                <span class="background-code">BD2</span>
+                            </div>
+                            <div class="background-item">
+                                <img src="../img/Backround Paket Birthday Anak_3.jpeg" alt="Background Birthday 3" data-code="BD3" title="Kode: BD3">
+                                <span class="background-code">BD3</span>
+                            </div>
+                            <div class="background-item">
+                                <img src="../img/Backround Paket Birthday Anak_4.jpeg" alt="Background Birthday 4" data-code="BD4" title="Kode: BD4">
+                                <span class="background-code">BD4</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card Wisuda -->
+                    <div class="background-card">
+                        <h3>Background Wisuda</h3>
+                        <div class="background-options">
+                            <div class="background-item">
+                                <img src="../img/Backgorund Paket Wisuda_1.jpeg" alt="Background Wisuda 1" data-code="WS1" title="Kode: WS1">
+                                <span class="background-code">WS1</span>
+                            </div>
+                            <div class="background-item">
+                                <img src="../img/Backgorund Paket Wisuda_2.jpeg" alt="Background Wisuda 2" data-code="WS2" title="Kode: WS2">
+                                <span class="background-code">WS2</span>
+                            </div>
+                            <div class="background-item">
+                                <img src="../img/Backgorund Paket Wisuda_3.jpeg" alt="Background Wisuda 3" data-code="WS3" title="Kode: WS3">
+                                <span class="background-code">WS3</span>
+                            </div>
+                            <div class="background-item">
+                                <img src="../img/Backgorund Paket Wisuda_4.jpeg" alt="Background Wisuda 4" data-code="WS4" title="Kode: WS4">
+                                <span class="background-code">WS4</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card Wedding -->
+                    <div class="background-card">
+                        <h3>Background Wedding</h3>
+                        <div class="background-options">
+                            <div class="background-item">
+                                <img src="../img/Backgorund Paket Wedding_1.jpeg" alt="Background Wedding 1" data-code="WG1" title="Kode: WG1">
+                                <span class="background-code">WG1</span>
+                            </div>
+                            <div class="background-item">
+                                <img src="../img/Backgorund Paket Wedding_2.jpeg" alt="Background Wedding 2" data-code="WG2" title="Kode: WG2">
+                                <span class="background-code">WG2</span>
+                            </div>
+                            <div class="background-item">
+                                <img src="../img/Backgorund Paket Wedding_3.jpeg" alt="Background Wedding 3" data-code="WG3" title="Kode: WG3">
+                                <span class="background-code">WG3</span>
+                            </div>
+                            <div class="background-item">
+                                <img src="../img/Backgorund Paket Wedding_4.jpeg" alt="Background Wedding 4" data-code="WG4" title="Kode: WG4">
+                                <span class="background-code">WG4</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card Lainnya -->
+                    <div class="background-card">
+                        <h3>Background Lainnya</h3>
+                        <div class="background-options">
+                            <div class="background-item">
+                                <img src="../img/Background lain_1.jpeg" alt="Background Lain 1" data-code="LN1" title="Kode: LN1">
+                                <span class="background-code">LN1</span>
+                            </div>
+                            <div class="background-item">
+                                <img src="../img/Background lain_2.jpeg" alt="Background Lain 2" data-code="LN2" title="Kode: LN2">
+                                <span class="background-code">LN2</span>
+                            </div>
+                            <div class="background-item">
+                                <img src="../img/Background lain_3.jpeg" alt="Background Lain 3" data-code="LN3" title="Kode: LN3">
+                                <span class="background-code">LN3</span>
+                            </div>
+                            <div class="background-item">
+                                <img src="../img/Background lain_4.jpeg" alt="Background Lain 4" data-code="LN4" title="Kode: LN4">
+                                <span class="background-code">LN4</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Package Comparison -->
+        <section class="page-section comparison-section">
+            <div class="page-section-content">
+                <div class="section-header">
+                    <h2 class="section-title">Perbandingan Paket</h2>
+                    <p class="section-subtitle">Lihat perbedaan detail setiap paket untuk membantu Anda memilih</p>
+                </div>
+                
+                <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fitur</th>
+                            <th>Basic</th>
+                            <th>Standar</th>
+                            <th>Premium</th>
+                            <th>Wedding</th>
+                            <th>Newborn</th>
+                            <th>Birthday</th>
+                            <th>Family</th>
+                            <th>Wisuda</th>
+                            <th>Lainnya</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Durasi Foto</td>
+                            <td>1-2 Jam</td>
+                            <td>2-3 Jam</td>
+                            <td>3-4 Jam</td>
+                            <td>Full Day</td>
+                            <td>2-3 Jam (Fleksibel)</td>
+                            <td>3-4 Jam Liputan</td>
+                            <td>2-3 Jam</td>
+                            <td>1-2 Jam</td>
+                            <td>Custom</td>
+                        </tr>
+                        <tr>
+                            <td>Jumlah Fotografer</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>2 + Assistant</td>
+                            <td>1 + Assistant</td>
+                            <td>1 + Lighting</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>Disesuaikan</td>
+                        </tr>
+                        <tr>
+                            <td>Foto Hasil Edit</td>
+                            <td>30</td>
+                            <td>50</td>
+                            <td>80</td>
+                            <td>200+</td>
+                            <td>25</td>
+                            <td>120+</td>
+                            <td>60</td>
+                            <td>40</td>
+                            <td>Sesuai brief</td>
+                        </tr>
+                        <tr>
+                            <td>Ganti Kostum / Tema</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>Unlimited</td>
+                            <td>3 (bayi + keluarga)</td>
+                            <td>2 Tema utama</td>
+                            <td>3 Set gaya</td>
+                            <td>2 Outfit</td>
+                            <td>Custom</td>
+                        </tr>
+                        <tr>
+                            <td>Backdrop / Setup</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>Multiple (venue)</td>
+                            <td>2 Setup bayi</td>
+                            <td>Dekorasi acara</td>
+                            <td>3 Backdrop</td>
+                            <td>2 Backdrop</td>
+                            <td>Custom</td>
+                        </tr>
+                        <tr>
+                            <td>Makeup / Grooming</td>
+                            <td>-</td>
+                            <td>Basic</td>
+                            <td>Professional</td>
+                            <td>Professional</td>
+                            <td>Baby-friendly grooming</td>
+                            <td>Opsional</td>
+                            <td>Opsional</td>
+                            <td>Basic</td>
+                            <td>Custom</td>
+                        </tr>
+                        <tr>
+                            <td>Print / Album</td>
+                            <td>-</td>
+                            <td>Print 10R (1)</td>
+                            <td>10R + Frame</td>
+                            <td>Album Hard Cover</td>
+                            <td>Album mini opsional</td>
+                            <td>Print opsional</td>
+                            <td>Album 20 halaman + Print 5R</td>
+                            <td>Print 10R (1)</td>
+                            <td>Sesuai brief</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                <!-- Mobile-friendly stacked comparison (auto-generated) -->
+                <div id="comparison-cards" class="comparison-cards" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="page-section cta-section">
+            <div class="page-section-content">
+                <div class="cta-content">
+                <h2>Masih Bingung Memilih Paket?</h2>
+                <p>Konsultasikan kebutuhan fotografi Anda dengan tim kami untuk mendapatkan rekomendasi paket terbaik.</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/62887436251512" class="btn-primary" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Chat via WhatsApp
+                    </a>
+                    <a href="tel:0214567890" class="btn-secondary">
+                        <i class="fas fa-phone"></i> Telepon
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Bloom Studio</h3>
+                <p>Studio fotografi dengan konsep warm dan natural. Mengabadikan setiap momen berharga Anda dengan sentuhan artistik.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Studio Foto No. 123, Jakarta Selatan</p>
+                <p><i class="fas fa-phone"></i> (021) 456-7890</p>
+                <p><i class="fas fa-envelope"></i> bloomstudio@gmail.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Sat: 9:00-18:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Bloom Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        // Auto-select package from URL parameter
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const packageParam = urlParams.get('package');
+            
+            if (packageParam) {
+                // Scroll to packages section
+                const packagesSection = document.querySelector('.packages-grid');
+                if (packagesSection) {
+                    packagesSection.scrollIntoView({ behavior: 'smooth' });
+                }
+                
+                // Highlight selected package
+                const packageCards = document.querySelectorAll('.package-card');
+                packageCards.forEach(card => {
+                    const packageLink = card.querySelector('a');
+                    if (packageLink && packageLink.href.includes(packageParam)) {
+                        card.style.transform = 'scale(1.05)';
+                        card.style.boxShadow = '0 15px 30px rgba(0,0,0,0.2)';
+                        card.style.borderColor = 'var(--accent-gold)';
+                    }
+                });
+            }
+
+            // Build responsive comparison cards from table for small screens
+            const table = document.querySelector('.comparison-table table');
+            const cardsContainer = document.getElementById('comparison-cards');
+
+            function buildComparisonCards() {
+                if (!table || !cardsContainer || cardsContainer.childElementCount) return;
+                const headers = Array.from(table.querySelectorAll('thead th')).map(th => th.textContent.trim());
+                if (headers.length < 2) return;
+                const featureHeader = headers[0];
+                const packageHeaders = headers.slice(1);
+
+                const rows = Array.from(table.querySelectorAll('tbody tr')).map(tr => {
+                    const tds = Array.from(tr.querySelectorAll('td'));
+                    return {
+                        feature: tds[0]?.textContent.trim() || '',
+                        values: tds.slice(1).map(td => td.textContent.trim())
+                    };
+                });
+
+                packageHeaders.forEach((pkgName, idx) => {
+                    const card = document.createElement('div');
+                    card.className = 'comparison-card';
+                    const header = document.createElement('div');
+                    header.className = 'comparison-card-header';
+                    header.innerHTML = `<h3>${pkgName}</h3>`;
+                    const body = document.createElement('div');
+                    body.className = 'comparison-card-body';
+
+                    rows.forEach(r => {
+                        const row = document.createElement('div');
+                        row.className = 'comp-row';
+                        row.innerHTML = `
+                            <span class="comp-label">${r.feature}</span>
+                            <span class="comp-value">${r.values[idx] || '-'}</span>
+                        `;
+                        body.appendChild(row);
+                    });
+
+                    card.appendChild(header);
+                    card.appendChild(body);
+                    cardsContainer.appendChild(card);
+                });
+            }
+
+            function toggleComparisonView() {
+                const isSmall = window.matchMedia('(max-width: 992px)').matches;
+                const tableWrapper = document.querySelector('.comparison-table');
+                if (isSmall) {
+                    buildComparisonCards();
+                }
+                if (tableWrapper) {
+                    tableWrapper.style.display = isSmall ? 'none' : '';
+                }
+                if (cardsContainer) {
+                    cardsContainer.style.display = isSmall ? 'grid' : 'none';
+                }
+            }
+
+            toggleComparisonView();
+            window.addEventListener('resize', toggleComparisonView);
+        });
+
+        // Background modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            var modal = document.getElementById("backgroundModal");
+            var modalImg = document.getElementById("modalImage");
+            var images = document.querySelectorAll(".background-options img");
+            
+            images.forEach(function(img) {
+                img.addEventListener('click', function() {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                });
+            });
+            
+            var span = document.getElementsByClassName("close")[0];
+            if (span) {
+                span.addEventListener('click', function() {
+                    modal.style.display = "none";
+                });
+            }
+            
+            // Close modal when clicking outside
+            if (modal) {
+                modal.addEventListener('click', function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                });
+            }
+        });
+    </script>
+
+    <!-- Background Modal -->
+    <div id="backgroundModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage" alt="Background Preview">
+    </div>
+</body>
+</html>
