@@ -87,23 +87,26 @@ function doPost(e) {
 
     // ===== SIMPAN DATA (STRUKTUR TETAP) =====
     const row = [
-      new Date(),               // 0 Timestamp
-      data.name || '',          // 1 Nama
-      data.email || '',         // 2 Email
-      data.phone || '',         // 3 Telepon
-      data.package || '',       // 4 Paket
-      data.people || '',        // 5 Jumlah Orang
-      bookingDate,              // 6 Tanggal
-      bookingTime,              // 7 Waktu
-      data.concept || '',       // 8 Konsep
-      data.background || '',    // 9 Background
-      data.message || '',       // 10 Pesan
-      data.bookingCode || '',   // 11 ID Booking
-      Number(data.packagePrice) || 0, // 12 Harga Paket
-      data.paymentType || '',   // 13 Tipe Pembayaran
-      Number(data.paymentAmount) || 0, // 14 Jumlah Bayar
-      data.paymentMethod || '', // 15 Metode Bayar
-      data.status || 'Menunggu Konfirmasi' // 16 Status
+      new Date(),                         // 0 Timestamp
+      data.name || '',                    // 1 Nama
+      data.email || '',                   // 2 Email
+      data.phone || '',                   // 3 Telepon
+      data.package || '',                 // 4 Paket
+      data.people || '',                  // 5 Jumlah Orang (label)
+      bookingDate,                        // 6 Tanggal
+      bookingTime,                        // 7 Waktu
+      data.concept || '',                 // 8 Konsep
+      data.background || '',              // 9 Background
+      data.message || '',                 // 10 Pesan
+      data.bookingCode || '',             // 11 ID Booking
+      Number(data.packagePrice) || 0,     // 12 Harga Paket (base)
+      data.paymentType || '',             // 13 Tipe Pembayaran
+      Number(data.paymentAmount) || 0,    // 14 Jumlah Bayar (DP/lunas)
+      data.paymentMethod || '',           // 15 Metode Bayar
+      data.status || 'Menunggu Konfirmasi', // 16 Status
+      Number(data.extraPeople) || 0,      // 17 Extra Orang (>2)
+      Number(data.extraPeopleFee) || 0,   // 18 Biaya Tambahan
+      Number(data.totalPrice) || (Number(data.packagePrice) || 0) // 19 Total Harga
     ];
 
     sheet.appendRow(row);
@@ -181,7 +184,10 @@ function doGet(e) {
           tipePembayaran: rows[i][13],
           jumlahBayar: rows[i][14],
           metodeBayar: rows[i][15],
-          status: rows[i][16]
+          status: rows[i][16],
+          extraOrang: rows[i][17] || 0,
+          biayaTambahan: rows[i][18] || 0,
+          totalHarga: rows[i][19] || rows[i][12] || 0
         });
       }
     }

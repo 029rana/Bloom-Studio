@@ -163,14 +163,11 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="people">Jumlah Orang</label>
-                                <select id="people" name="people">
-                                    <option value="1 Orang">1 Orang</option>
-                                    <option value="2 Orang">2 Orang</option>
-                                    <option value="3-5 Orang">3-5 Orang</option>
-                                    <option value="6-10 Orang">6-10 Orang</option>
-                                    <option value="10+ Orang">10+ Orang</option>
-                                </select>
+                                <label for="people">Jumlah Orang *</label>
+                                <input type="number" id="people" name="people" min="1" step="1" value="2" required>
+                                <small id="peopleNotice" class="input-note" style="color: var(--light-brown); display: block; margin-top: 6px;">
+                                    2 orang pertama sudah termasuk. Jika lebih dari 2, ada tambahan Rp 15.000 per orang.
+                                </small>
                             </div>
                         </div>
                         
@@ -287,6 +284,10 @@
                             </div>
                             
                             <div class="price-summary">
+                                <div class="summary-row" id="extraFeeRow" style="display: none;">
+                                    <span>Biaya tambahan (&gt;2 orang)</span>
+                                    <span id="extraFee" class="price-value">Rp 0</span>
+                                </div>
                                 <div class="summary-row">
                                     <span>Total Harga</span>
                                     <span id="totalPrice" class="price-value">Rp 0</span>
@@ -812,10 +813,14 @@
             const packageSelect = document.getElementById('package');
             const paymentDPRadio = document.getElementById('paymentDP');
             const paymentFullRadio = document.getElementById('paymentFull');
+            const peopleInput = document.getElementById('people');
+            const peopleNotice = document.getElementById('peopleNotice');
             const basePriceDisplay = document.getElementById('basePrice');
             const totalPriceDisplay = document.getElementById('totalPrice');
             const paymentAmountDisplay = document.getElementById('paymentAmount');
             const paymentLabelDisplay = document.getElementById('paymentLabel');
+            const extraFeeDisplay = document.getElementById('extraFee');
+            const extraFeeRow = document.getElementById('extraFeeRow');
             
             // Debug: Check if elements exist
             if (!packageSelect || !paymentDPRadio || !paymentFullRadio || !basePriceDisplay) {
@@ -833,22 +838,40 @@
                 }).format(amount);
             }
             
+            function updatePeopleNotice(extraPeople, extraCost, totalPeople) {
+                if (!peopleNotice) return;
+                if (extraPeople > 0) {
+                    peopleNotice.textContent = `Total: ${totalPeople} orang. Tambahan Rp 15.000 per orang mulai orang ke-3. Estimasi tambahan: ${formatCurrency(extraCost)} (${extraPeople} org).`;
+                    peopleNotice.style.color = 'var(--accent-gold)';
+                } else {
+                    peopleNotice.textContent = '2 orang pertama sudah termasuk. Jika lebih dari 2, ada tambahan Rp 15.000 per orang.';
+                    peopleNotice.style.color = 'var(--light-brown)';
+                }
+            }
+
             function updatePrice() {
                 if (!packageSelect || !paymentDPRadio || !basePriceDisplay) {
                     console.error('Cannot update price - elements missing');
                     return;
                 }
-                
+
                 console.log('Package select value:', packageSelect.value);
                 console.log('Package select element:', packageSelect);
-                
-                const selectedPrice = parseFloat(packageSelect.value) || 0;
+
+                const basePrice = parseFloat(packageSelect.value) || 0;
+                const peopleCount = Math.max(parseInt(peopleInput?.value, 10) || 1, 1);
+                const extraPeople = Math.max(peopleCount - 2, 0);
+                const extraCost = extraPeople * 15000;
+                const selectedPrice = basePrice + extraCost;
                 const isCustom = packageSelect.value === 'custom';
                 const isDP = paymentDPRadio ? paymentDPRadio.checked : true;
                 const paymentAmount = isDP ? selectedPrice * 0.5 : selectedPrice;
-                
+
                 console.log('Update price called:', { 
                     rawValue: packageSelect.value,
+                    basePrice,
+                    extraPeople,
+                    extraCost,
                     selectedPrice, 
                     isCustom, 
                     isDP, 
@@ -867,6 +890,7 @@
                     paymentTypeSection.style.display = 'none';
                     priceSummary.style.display = 'none';
                     paymentMethodsSection.style.display = 'none';
+                    if (extraFeeRow) extraFeeRow.style.display = 'none';
                     
                     // Show custom message
                     if (!document.querySelector('.custom-quote-message')) {
@@ -895,9 +919,21 @@
                     if (customMsg) customMsg.remove();
                     
                     // Update displays
-                    basePriceDisplay.textContent = formatCurrency(selectedPrice);
+                    basePriceDisplay.textContent = formatCurrency(basePrice);
                     totalPriceDisplay.textContent = formatCurrency(selectedPrice);
                     paymentAmountDisplay.textContent = formatCurrency(paymentAmount);
+
+                    if (extraFeeRow && extraFeeDisplay) {
+                        if (extraCost > 0) {
+                            extraFeeRow.style.display = 'flex';
+                            extraFeeDisplay.textContent = `${formatCurrency(extraCost)} (${extraPeople} org x Rp 15.000)`;
+                        } else {
+                            extraFeeRow.style.display = 'none';
+                            extraFeeDisplay.textContent = formatCurrency(0);
+                        }
+                    }
+
+                    updatePeopleNotice(extraPeople, extraCost, peopleCount);
                     
                     // Update label
                     if (isDP) {
@@ -935,6 +971,10 @@
             
             paymentDPRadio.addEventListener('change', updatePrice);
             paymentFullRadio.addEventListener('change', updatePrice);
+            if (peopleInput) {
+                peopleInput.addEventListener('input', updatePrice);
+                peopleInput.addEventListener('change', updatePrice);
+            }
 
             // Deep-link package selection and scroll from packages page
             const urlParams = new URLSearchParams(window.location.search);
@@ -1038,7 +1078,7 @@
             const successModal = document.getElementById('successModal');
             
             // GANTI DENGAN DEPLOYMENT URL ANDA
-            const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzOlgL7zCSlz33GAT4CK5fHlUtq-bG8W8FCnGaiy7-lOgU88VlRMlGEEZ3RFgaEWVg7/exec';
+            const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyzXjhTtQScgQ3cXlw-mQlaU8N8jDGHlSjsW0LUsM6dx8H_uFC9OLqID08SZCj9I1KV/exec';
             const FILE_UPLOAD_URL = 'https://script.google.com/macros/s/AKfycbzUZHT9EpIeJvwa-Bbm-qUpqaLWML8XTIxZrgx2Y3leIBuehDNC1VtgGTVzAeeFfK__/exec';
             
             if (bookingForm) {
@@ -1053,7 +1093,11 @@
                     const packageSelect = document.getElementById('package');
                     const packageValue = packageSelect.value;
                     const packageName = packageSelect.options[packageSelect.selectedIndex].text;
-                    const people = document.getElementById('people').value;
+                    const peopleInput = document.getElementById('people');
+                    const peopleCount = Math.max(parseInt(peopleInput?.value, 10) || 1, 1);
+                    const peopleLabel = `${peopleCount} Orang`;
+                    const extraPeople = Math.max(peopleCount - 2, 0);
+                    const extraPeopleFee = extraPeople * 15000;
                     const bookingDate = document.getElementById('date').value;
                     const bookingTime = document.getElementById('time').value;
                     const concept = document.getElementById('concept').value || 'Belum ditentukan';
@@ -1095,7 +1139,7 @@
                     *Detail Booking*
                     Kode Booking: ${bookingCode}
                     Paket: ${packageName}
-                    Jumlah Orang: ${people}
+                    Jumlah Orang: ${peopleLabel} ${extraPeople > 0 ? `(Tambahan ${extraPeople} org x Rp 15.000 = ${formatCurrency(extraPeopleFee)})` : '(Tidak ada tambahan)'}
                     Tanggal: ${formattedDate}
                     Waktu: ${bookingTime}
                     Konsep Foto: ${concept}
@@ -1113,9 +1157,10 @@
                     
                     // ===== AMBIL DATA PEMBAYARAN =====
                     const selectedPrice = parseFloat(packageValue) || 0;
+                    const totalPrice = selectedPrice + extraPeopleFee;
                     const paymentType = document.querySelector('input[name="paymentType"]:checked')?.value || 'dp';
                     const isDP = paymentType === 'dp';
-                    const paymentAmount = isDP ? selectedPrice * 0.5 : selectedPrice;
+                    const paymentAmount = isDP ? totalPrice * 0.5 : totalPrice;
                     const paymentPercentage = isDP ? '50%' : '100%';
                     
                     // Get selected payment method
@@ -1145,7 +1190,9 @@
                         email: email,
                         phone: phone,
                         package: packageName.replace(' (Popular)', ''),
-                        people: people,
+                        people: peopleLabel,
+                        extraPeople: extraPeople,
+                        extraPeopleFee: extraPeopleFee,
                         date: bookingDate,
                         time: bookingTime,
                         concept: concept,
@@ -1153,6 +1200,7 @@
                         message: message,
                         bookingCode: bookingCode,
                         packagePrice: selectedPrice,
+                        totalPrice: totalPrice,
                         paymentType: paymentPercentage,
                         paymentAmount: paymentAmount,
                         paymentMethod: paymentMethodName,
